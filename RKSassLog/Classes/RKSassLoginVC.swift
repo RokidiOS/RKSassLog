@@ -49,6 +49,7 @@ public class RKSassLoginVC: RKBaseViewController {
             
             UserDefaults.standard.set(self.userNameTf.text, forKey: self.udUserKey)
             UserDefaults.standard.set(self.passwordTf.text, forKey: self.udPwdKey)
+            UserDefaults.standard.set(self.companyTf.text, forKey: self.udComanyKey)
         })
     }
     let udComanyKey = "company"
