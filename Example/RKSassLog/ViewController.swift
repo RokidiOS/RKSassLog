@@ -9,9 +9,9 @@
 import UIKit
 import RKSassLog
 
-class ViewController: UIViewController {
+open class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         let btn = UIButton()
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: RKSassLogDelegate {
-    func logSuccess(uid: String, token: String, loginVC: UIViewController) {
+    public func logSuccess(uid: String, token: String, loginVC: UIViewController) {
         
     }
     
