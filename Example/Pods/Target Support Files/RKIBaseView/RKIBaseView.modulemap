@@ -1,0 +1,6 @@
+framework module RKIBaseView {
+  umbrella header "RKIBaseView-umbrella.h"
+
+  export *
+  module * { export * }
+}

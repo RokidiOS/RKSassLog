@@ -1,0 +1,6 @@
+framework module Pods_RKSassLog_Example {
+  umbrella header "Pods-RKSassLog_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

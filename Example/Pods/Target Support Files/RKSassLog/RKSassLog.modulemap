@@ -1,0 +1,6 @@
+framework module RKSassLog {
+  umbrella header "RKSassLog-umbrella.h"
+
+  export *
+  module * { export * }
+}

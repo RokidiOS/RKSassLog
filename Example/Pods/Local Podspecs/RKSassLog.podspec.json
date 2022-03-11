@@ -1,0 +1,30 @@
+{
+  "name": "RKSassLog",
+  "version": "0.1.0",
+  "summary": "A short description of RKSassLog.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/chzy/RKSassLog",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "chzy": "yang.chunzhi@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/chzy/RKSassLog.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "RKSassLog/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "RKIBaseView": [
+
+    ]
+  }
+}

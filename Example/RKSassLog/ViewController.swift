@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import RKSassLog
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let btn = UIButton()
+        btn.setTitle("去登录界面", for: .normal)
+        btn.frame = CGRect(x: 100, y: 100, width: 100, height: 30)
+        btn.addTarget(self, action: #selector(showLogVC), for: .touchUpInside)
+        btn.backgroundColor = .black
+        view.addSubview(btn)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func showLogVC() {
+        let vc = RKSassLoginVC()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)        
     }
+    
+}
 
+extension ViewController: RKSassLogDelegate {
+    func logSuccess(uid: String, token: String, loginVC: UIViewController) {
+        
+    }
+    
+    
 }
 
