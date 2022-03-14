@@ -9,12 +9,12 @@
 import Foundation
 import Alamofire
 
-enum EnvType {
+public enum EnvType {
     case test
     case develop
     case product
     
-    func sassURl() ->String {
+   public func sassURl() ->String {
         switch self {
         case .test:
             return "https://saas-ar-test.rokid.com"
@@ -25,7 +25,7 @@ enum EnvType {
         }
     }
     
-    func imURl() ->String {
+   public func imURl() ->String {
         switch self {
         case .test:
             return "https://im-test.rokid-inc.com/business/"
@@ -36,7 +36,7 @@ enum EnvType {
         }
     }
     
-    func socketURl() ->String {
+   public func socketURl() ->String {
         switch self {
         case .test:
             return "wss://im-testwss.rokid-inc.com/ws/"
@@ -49,7 +49,7 @@ enum EnvType {
     
 }
 
-let env = EnvType.product
+var env = EnvType.product
 
 public class LoginHelper: NSObject {
     
