@@ -1500,6 +1500,38 @@
 			};
 			name = Release;
 		};
+		76933235598F4E61C5A58BD0EE6A6EC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5AAE2544F3535D48F41A9B3E6EEBB85 /* RKSassLog.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RKSassLog/RKSassLog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RKSassLog/RKSassLog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RKSassLog/RKSassLog.modulemap";
+				PRODUCT_MODULE_NAME = RKSassLog;
+				PRODUCT_NAME = RKSassLog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		8F0D51CB6B007179E190F3F27EAE3750 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 35036E9D3E14E6CEB844A5896EE0AA2B /* SnapKit.debug.xcconfig */;
@@ -1685,36 +1717,6 @@
 			};
 			name = Release;
 		};
-		B8FCD295078C70181AE3F5A41091B5F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5652680B16D26A2F412B459DA4A3CD57 /* RKSassLog.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RKSassLog/RKSassLog-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RKSassLog/RKSassLog-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RKSassLog/RKSassLog.modulemap";
-				PRODUCT_MODULE_NAME = RKSassLog;
-				PRODUCT_NAME = RKSassLog;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		CA22C334E2940B21EB576035F44AD294 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89AF6DD62A19741DA9CFBDC7351DFCA6 /* Alamofire.debug.xcconfig */;
@@ -1807,6 +1809,37 @@
 			};
 			name = Release;
 		};
+		CBB650B1D18EB45A2C6CD4693131E6E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5652680B16D26A2F412B459DA4A3CD57 /* RKSassLog.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RKSassLog/RKSassLog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RKSassLog/RKSassLog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RKSassLog/RKSassLog.modulemap";
+				PRODUCT_MODULE_NAME = RKSassLog;
+				PRODUCT_NAME = RKSassLog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E9674B06C3AE9F78BD405D65B3698263 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC7089E42C548C7C05E183229030068F /* SnapKit.release.xcconfig */;
@@ -1831,37 +1864,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EF27C3FB39194DCB92898746FC6DCABF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5AAE2544F3535D48F41A9B3E6EEBB85 /* RKSassLog.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RKSassLog/RKSassLog-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RKSassLog/RKSassLog-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RKSassLog/RKSassLog.modulemap";
-				PRODUCT_MODULE_NAME = RKSassLog;
-				PRODUCT_NAME = RKSassLog;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1902,8 +1904,8 @@
 		6336B7A2142922AEB5667E1523C32428 /* Build configuration list for PBXNativeTarget "RKSassLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8FCD295078C70181AE3F5A41091B5F6 /* Debug */,
-				EF27C3FB39194DCB92898746FC6DCABF /* Release */,
+				CBB650B1D18EB45A2C6CD4693131E6E0 /* Debug */,
+				76933235598F4E61C5A58BD0EE6A6EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
