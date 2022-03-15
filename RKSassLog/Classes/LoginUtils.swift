@@ -49,13 +49,13 @@ public enum EnvType {
     
 }
 
-public var env = EnvType.product
+public var env = EnvType.develop
 
 public class LoginHelper: NSObject {
     
     static let kurlPrex = env.sassURl()
     static let ktokenPrex = "Bearer "
-    class func loginAction(companyID: String?, userName: String?, password: String?, compeletBlock:@escaping (_ uid: String?, _ token: String?, _ errorMsg: String?) ->Void) {
+    public class func loginAction(companyID: String?, userName: String?, password: String?, compeletBlock:@escaping (_ uid: String?, _ token: String?, _ errorMsg: String?) ->Void) {
         guard let userName = userName else {
             compeletBlock(nil, nil, "请输入用户名")
             return
@@ -74,11 +74,11 @@ public class LoginHelper: NSObject {
         loginData["scope"] = "server"
         
         let url = kurlPrex + "/api/auth/oauth/token"
-        var headers: [String: String] = [:]
-        headers["Accept-Language"] = "zh-CN"
-        headers["Content-Type"] = "application/json"
+        var headers = HTTPHeaders()
+        headers.add(name: "Accept-Language", value: "zh-CN")
+        headers.add(name: "Content-Type", value: "application/json")
         
-        let req = Alamofire.request(url, method: .post, parameters: loginData, encoding: JSONEncoding.default, headers: headers)
+        let req = AF.request(url, method: .post, parameters: loginData, encoding: JSONEncoding.default, headers: headers)
         req.response(queue: .main) { response in
             guard let data = response.data else { return }
             do {
@@ -99,13 +99,12 @@ public class LoginHelper: NSObject {
         }
     }
     
-    class func getUserInfo(_ token: String, compelet:@escaping([String: Any]?, Bool) ->Void) {
+    public class func getUserInfo(_ token: String, compelet:@escaping([String: Any]?, Bool) ->Void) {
         let url = kurlPrex + "/api/upms/v1/deviceUser/getDeviceUserLoginInfo"
-        var headers: [String: String] = [:]
-        headers["Accept-Language"] = "zh-CN"
-        headers["Content-Type"] = "application/json"
-        headers["Authorization"] = ktokenPrex + token
-        let req = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+        var headers = HTTPHeaders()
+        headers.add(name: "Accept-Language", value: "zh-CN")
+        headers.add(name: "Authorization", value: ktokenPrex + token)
+        let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
         req.response(queue: .main) { response in
             guard let data = response.data else { return }
             do {

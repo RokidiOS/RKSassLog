@@ -32,5 +32,5 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'RKSassLog/Classes/**/*'
   s.dependency 'Alamofire'
-  s.dependency 'RKIBaseView'
+
 end
