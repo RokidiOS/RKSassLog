@@ -1,6 +1,0 @@
-framework module RKIUtils {
-  umbrella header "RKIUtils-umbrella.h"
-
-  export *
-  module * { export * }
-}

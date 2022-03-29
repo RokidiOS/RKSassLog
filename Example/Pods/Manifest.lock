@@ -1,15 +1,7 @@
 PODS:
-  - Alamofire (4.9.1)
-  - RKIBaseView (0.1.2):
-    - RKILogger
-    - RKIUtils
-    - SnapKit (~> 4.2.0)
-  - RKILogger (0.1.2)
-  - RKIUtils (0.1.2)
+  - Alamofire (5.5.0)
   - RKSassLog (0.1.0):
     - Alamofire
-    - RKIBaseView
-  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - RKSassLog (from `../`)
@@ -17,23 +9,15 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - RKIBaseView
-    - RKILogger
-    - RKIUtils
-    - SnapKit
 
 EXTERNAL SOURCES:
   RKSassLog:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  RKIBaseView: 3e27b7e12a64b3918b1201fa0dcc9ef571ae2b48
-  RKILogger: acb89cf527cde1f6e21425438338f6d1e49873f4
-  RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
-  RKSassLog: a0e4e3f5bb3e0fcc2e56100babea75b5218bd9cd
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  RKSassLog: be42c30c0227c12443c500b0e24ad7e3fb9ab479
 
-PODFILE CHECKSUM: 402986aa523ec385fbcc14c1e286099f13ff5768
+PODFILE CHECKSUM: 5376d5c8f85c4dd747fe9189d6d5d945f701d63d
 
 COCOAPODS: 1.11.2

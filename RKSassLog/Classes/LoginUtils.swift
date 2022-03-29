@@ -106,7 +106,10 @@ public class LoginHelper: NSObject {
         headers.add(name: "Authorization", value: ktokenPrex + token)
         let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
         req.response(queue: .main) { response in
-            guard let data = response.data else { return }
+            guard let data = response.data else {
+                compelet(nil, false)
+                return
+            }
             do {
               let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                 if let dic = json as? [String: Any] {
@@ -116,8 +119,8 @@ public class LoginHelper: NSObject {
                 }
             } catch let error {
               print(error)
+              compelet(nil, false)
             }
-           compelet(nil, false)
         }
     }
 

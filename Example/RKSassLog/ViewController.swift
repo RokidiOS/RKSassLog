@@ -13,28 +13,10 @@ open class ViewController: UIViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let btn = UIButton()
-        btn.setTitle("去登录界面", for: .normal)
-        btn.frame = CGRect(x: 100, y: 100, width: 100, height: 30)
-        btn.addTarget(self, action: #selector(showLogVC), for: .touchUpInside)
-        btn.backgroundColor = .black
-        view.addSubview(btn)
+     
     }
 
-    @objc func showLogVC() {
-        let vc = RKSassLoginVC()
-        vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)        
-    }
     
 }
 
-extension ViewController: RKSassLogDelegate {
-    public func logSuccess(uid: String, token: String, loginVC: UIViewController) {
-        
-    }
-    
-    
-}
 
