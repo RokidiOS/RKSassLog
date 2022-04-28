@@ -55,13 +55,21 @@ public class LoginHelper: NSObject {
     
     static let kurlPrex = env.sassURl()
     static let ktokenPrex = "Bearer "
-    public class func loginAction(companyID: String?, userName: String?, password: String?, compeletBlock:@escaping (_ uid: String?, _ token: String?, _ errorMsg: String?) ->Void) {
+    
+    public class func loginAction(companyID: String?,
+                                  userName: String?,
+                                  password: String?,
+                                  compeletBlock:@escaping (_ uid: String?,
+                                                           _ token: String?,
+                                                           _ refreshToken: String?,
+                                                           _ expiresTime: Int64?,
+                                                           _ errorMsg: String?) ->Void) {
         guard let userName = userName else {
-            compeletBlock(nil, nil, "请输入用户名")
+            compeletBlock(nil, nil, nil, nil, "请输入用户名")
             return
         }
         guard let password = password else {
-            compeletBlock(nil, nil, "请输入密码")
+            compeletBlock(nil, nil, nil, nil, "请输入密码")
             return
         }
         
@@ -86,15 +94,17 @@ public class LoginHelper: NSObject {
                 let dic = json as! Dictionary<String, Any>
                 guard let code = dic["code"] as? Int else { return }
                 if code != 1 {
-                    compeletBlock(nil, nil, dic["msg"] as? String)
+                    compeletBlock(nil, nil, nil, nil,dic["msg"] as? String)
                     return
                 }
                 let tpDict =  dic["data"] as! Dictionary<String, Any>
-                let refreshToken = tpDict["accessToken"] as? String
+                let accessToken = tpDict["accessToken"] as? String
+                let refreshToken = tpDict["refreshToken"] as? String
+                let expiresTime = tpDict["expiresIn"] as? Int64
                 let uuid = dic["uuid"] as? String
-                compeletBlock(uuid, refreshToken, nil)
+                compeletBlock(uuid, accessToken, refreshToken, expiresTime, nil)
             } catch let error {
-              compeletBlock(nil, nil, "\(error)")
+              compeletBlock(nil, nil, nil, nil, "\(error)")
             }
         }
     }
