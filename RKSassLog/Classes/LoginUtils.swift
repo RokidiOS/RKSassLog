@@ -56,6 +56,8 @@ public class LoginHelper: NSObject {
     static let kurlPrex = env.sassURl()
     static let ktokenPrex = "Bearer "
     
+    static var accessToken: String?
+    
     public class func loginAction(companyID: String?,
                                   userName: String?,
                                   password: String?,
@@ -99,6 +101,9 @@ public class LoginHelper: NSObject {
                 }
                 let tpDict =  dic["data"] as! Dictionary<String, Any>
                 let accessToken = tpDict["accessToken"] as? String
+                
+                self.accessToken = accessToken
+                
                 let refreshToken = tpDict["refreshToken"] as? String
                 let expiresTime = tpDict["expiresIn"] as? Int64
                 let uuid = dic["uuid"] as? String
@@ -115,6 +120,40 @@ public class LoginHelper: NSObject {
         headers.add(name: "Accept-Language", value: "zh-CN")
         headers.add(name: "Authorization", value: ktokenPrex + token)
         let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+        req.response(queue: .main) { response in
+            guard let data = response.data else {
+                compelet(nil, false)
+                return
+            }
+            do {
+              let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let dic = json as? [String: Any] {
+                    if let dataDict = dic["data"] as? [String: Any] {
+                        compelet(dataDict, true)
+                    }
+                }
+            } catch let error {
+              print(error)
+              compelet(nil, false)
+            }
+        }
+    }
+    
+    public class func getContactsList(_ token: String?, keyword: String?, compelet:@escaping([String: Any]?, Bool) ->Void) {
+        let url = kurlPrex + "/api/lubanCooperate/v1/cooperate/queryContactsList"
+        var headers = HTTPHeaders()
+        headers.add(name: "Accept-Language", value: "zh-CN")
+        if let token = token {
+            headers.add(name: "Authorization", value: ktokenPrex + token)
+        } else if let accessToken = self.accessToken {
+            headers.add(name: "Authorization", value: ktokenPrex + accessToken)
+        }
+        
+        var parameters: [String: String] = [:]
+        if let keyword = keyword {
+            parameters["keyword"] = keyword
+        }
+        let req = AF.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
         req.response(queue: .main) { response in
             guard let data = response.data else {
                 compelet(nil, false)
