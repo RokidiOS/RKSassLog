@@ -153,7 +153,7 @@ public class LoginHelper: NSObject {
         if let keyword = keyword {
             parameters["keyword"] = keyword
         }
-        let req = AF.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        let req = AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         req.response(queue: .main) { response in
             guard let data = response.data else {
                 compelet(nil, false)
